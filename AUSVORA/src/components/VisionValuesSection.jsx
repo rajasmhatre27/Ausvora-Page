@@ -67,11 +67,7 @@ const VisionValuesSection = () => {
       <div className="max-w-7xl mx-auto relative z-10">
         {/* Vision Section */}
         <div className="text-center mb-20">
-          {/* Vision Badge */}
-          <div className="inline-flex items-center gap-2 px-5 py-2.5 bg-white/80 backdrop-blur-sm rounded-full border border-indigo-200/50 shadow-lg mb-8">
-            <Eye className="w-5 h-5 text-indigo-600" />
-            <span className="text-sm font-semibold text-indigo-700 uppercase tracking-wider">Our Vision</span>
-          </div>
+         
           
           {/* Vision Statement with Animation */}
           <div className="relative group">
@@ -172,36 +168,7 @@ const VisionValuesSection = () => {
           </div>
         </div>
 
-        {/* Bottom CTA Section */}
-        <div className="relative">
-          <div className="absolute inset-0 bg-gradient-to-r from-indigo-600/10 to-purple-600/10 blur-3xl"></div>
-          <div className="relative bg-gradient-to-r from-indigo-50 via-purple-50 to-pink-50 rounded-3xl p-8 md:p-12 text-center border border-indigo-100/50">
-            <Sparkles className="w-12 h-12 text-indigo-600 mx-auto mb-6" />
-            
-            <h3 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
-              Explore, Learn & Grow with{" "}
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-600 to-purple-600">
-                Ausvora
-              </span>
-            </h3>
-            
-            <p className="text-lg text-gray-600 mb-8 max-w-2xl mx-auto">
-              Join thousands who have transformed their digital journey with us. 
-              Your success story starts today.
-            </p>
-            
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <button className="group inline-flex items-center gap-2 px-8 py-4 bg-gradient-to-r from-indigo-600 to-purple-600 text-white rounded-xl font-semibold shadow-xl hover:shadow-2xl transition-all duration-300 hover:scale-105">
-                <Rocket className="w-5 h-5 group-hover:rotate-12 transition-transform" />
-                Start Your Journey
-              </button>
-              <button className="inline-flex items-center gap-2 px-8 py-4 bg-white border-2 border-indigo-200 text-indigo-700 rounded-xl font-semibold hover:border-indigo-400 hover:bg-indigo-50 transition-all duration-300">
-                <Target className="w-5 h-5" />
-                Learn More
-              </button>
-            </div>
-          </div>
-        </div>
+        
       </div>
     </section>
   );
