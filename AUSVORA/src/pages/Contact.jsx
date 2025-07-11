@@ -1,17 +1,9 @@
-import React, { useEffect, useState } from "react";
-import { Phone, Mail, Send, ArrowDown, CheckCircle } from "lucide-react";
+// Contact.jsx
+import React, { useEffect } from "react";
+import { Phone, Mail, ArrowDown } from "lucide-react";
+import ContactForm from "./ContactForm";
 
 const Contact = () => {
-  const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    phone: '',
-    service: '',
-    message: ''
-  });
-
-  const [showSuccess, setShowSuccess] = useState(false);
-
   useEffect(() => {
     const style = document.createElement('style');
     style.textContent = `
@@ -47,33 +39,13 @@ const Contact = () => {
     return () => document.head.removeChild(style);
   }, []);
 
-  const handleChange = (e) => {
-    setFormData({
-      ...formData,
-      [e.target.name]: e.target.value
-    });
-  };
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    console.log('Form submitted:', formData);
-    setShowSuccess(true);
-    setTimeout(() => setShowSuccess(false), 5000);
-    setFormData({
-      name: '',
-      email: '',
-      phone: '',
-      service: '',
-      message: ''
-    });
-  };
-
   const scrollToNextSection = () => {
     window.scrollBy({ top: window.innerHeight, behavior: 'smooth' });
   };
 
   return (
     <div className="relative bg-white">
+      {/* Hero */}
       <section className="relative min-h-screen flex items-center justify-center bg-gradient-to-b from-gray-50 to-white overflow-hidden">
         <div className="absolute inset-0">
           <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_50%,rgba(147,51,234,0.05),transparent_70%)]"></div>
@@ -88,7 +60,7 @@ const Contact = () => {
           <p className="text-2xl md:text-3xl text-gray-600 font-light animate-fadeIn animation-delay-200">
             We're here to help you succeed in the digital economy
           </p>
-          <button 
+          <button
             onClick={scrollToNextSection}
             className="mt-16 animate-float"
             aria-label="Scroll to contact information"
@@ -98,6 +70,7 @@ const Contact = () => {
         </div>
       </section>
 
+      {/* Contact Info */}
       <section className="py-32 bg-gradient-to-b from-white to-gray-50">
         <div className="max-w-6xl mx-auto px-8">
           <div className="text-center mb-16">
@@ -118,7 +91,6 @@ const Contact = () => {
                 <a href="tel:+918652608396" className="text-2xl text-gray-700 hover:text-purple-600 transition-colors font-medium">
                   +91 8652 608 396
                 </a>
-                <p className="text-gray-500 mt-3">Monday - Saturday, 9 AM - 6 PM IST</p>
               </div>
             </div>
             <div className="group animate-slideUp animation-delay-200">
@@ -130,15 +102,15 @@ const Contact = () => {
                 <a href="mailto:ausvoraofficial@gmail.com" className="text-xl text-gray-700 hover:text-blue-600 transition-colors font-medium break-all">
                   ausvoraofficial@gmail.com
                 </a>
-                <p className="text-gray-500 mt-3">We respond within 24 hours</p>
               </div>
             </div>
           </div>
         </div>
       </section>
 
+      {/* Inline Form Section */}
       <section className="py-32 bg-white">
-        <div className="max-w-5xl mx-auto px-8">
+        <div className="max-w-6xl mx-auto px-6 md:px-8">
           <div className="grid lg:grid-cols-2 gap-16 items-start">
             <div className="animate-slideUp">
               <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
@@ -149,107 +121,7 @@ const Contact = () => {
               </p>
             </div>
 
-            <div className="animate-slideUp animation-delay-200">
-              {showSuccess && (
-                <div className="mb-6 bg-green-50 border border-green-200 rounded-xl p-4 animate-scaleIn">
-                  <div className="flex items-center text-green-800">
-                    <CheckCircle className="w-5 h-5 mr-2" />
-                    <p className="font-medium">Thank you! We'll be in touch soon.</p>
-                  </div>
-                </div>
-              )}
-
-              <div className="bg-gray-50 rounded-3xl p-8 md:p-10">
-                <div className="space-y-6">
-                  <div>
-                    <label className="block text-sm font-medium text-gray-700 mb-2">
-                      Full Name *
-                    </label>
-                    <input
-                      type="text"
-                      name="name"
-                      value={formData.name}
-                      onChange={handleChange}
-                      required
-                      className="w-full px-5 py-3 bg-white border border-gray-200 rounded-xl focus:ring-2 focus:ring-purple-500 focus:border-transparent transition-all"
-                      placeholder="John Doe"
-                    />
-                  </div>
-
-                  <div className="grid md:grid-cols-2 gap-6">
-                    <div>
-                      <label className="block text-sm font-medium text-gray-700 mb-2">
-                        Email Address *
-                      </label>
-                      <input
-                        type="email"
-                        name="email"
-                        value={formData.email}
-                        onChange={handleChange}
-                        required
-                        className="w-full px-5 py-3 bg-white border border-gray-200 rounded-xl focus:ring-2 focus:ring-purple-500 focus:border-transparent transition-all"
-                        placeholder="john@example.com"
-                      />
-                    </div>
-                    <div>
-                      <label className="block text-sm font-medium text-gray-700 mb-2">
-                        Phone Number *
-                      </label>
-                      <input
-                        type="tel"
-                        name="phone"
-                        value={formData.phone}
-                        onChange={handleChange}
-                        required
-                        className="w-full px-5 py-3 bg-white border border-gray-200 rounded-xl focus:ring-2 focus:ring-purple-500 focus:border-transparent transition-all"
-                        placeholder="+91 98765 43210"
-                      />
-                    </div>
-                  </div>
-
-                  <div>
-                    <label className="block text-sm font-medium text-gray-700 mb-2">
-                      What Are You Looking For? *
-                    </label>
-                    <select
-                      name="service"
-                      value={formData.service}
-                      onChange={handleChange}
-                      required
-                      className="w-full px-5 py-3 bg-white border border-gray-200 rounded-xl focus:ring-2 focus:ring-purple-500 focus:border-transparent transition-all"
-                    >
-                      <option value="">Select a service</option>
-                      <option value="ecommerce">E-Commerce Product Inquiry</option>
-                      <option value="training">Digital Marketing Training</option>
-                      <option value="consultancy">Consultancy Services</option>
-                      <option value="general">General Enquiry</option>
-                    </select>
-                  </div>
-
-                  <div>
-                    <label className="block text-sm font-medium text-gray-700 mb-2">
-                      Message (Optional)
-                    </label>
-                    <textarea
-                      name="message"
-                      value={formData.message}
-                      onChange={handleChange}
-                      rows={4}
-                      className="w-full px-5 py-3 bg-white border border-gray-200 rounded-xl focus:ring-2 focus:ring-purple-500 focus:border-transparent transition-all resize-none"
-                      placeholder="Tell us more about your requirements..."
-                    />
-                  </div>
-
-                  <button
-                    onClick={handleSubmit}
-                    className="w-full bg-gradient-to-r from-purple-600 to-blue-600 text-white py-4 rounded-xl font-semibold text-lg hover:shadow-lg transform hover:scale-[1.02] transition-all duration-300 flex items-center justify-center"
-                  >
-                    Send Message
-                    <Send className="w-5 h-5 ml-2" />
-                  </button>
-                </div>
-              </div>
-            </div>
+            <ContactForm />
           </div>
         </div>
       </section>
