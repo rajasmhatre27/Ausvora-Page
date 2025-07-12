@@ -1,5 +1,12 @@
 import React from "react";
-import { ShoppingBag, GraduationCap, Mail, Phone, MapPin, Facebook, Twitter, Instagram, Linkedin, Youtube, ArrowRight } from "lucide-react";
+import {
+  ShoppingBag,
+  GraduationCap,
+  Mail,
+  Phone,
+  MapPin,
+  ArrowRight
+} from "lucide-react";
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -11,17 +18,8 @@ const Footer = () => {
   ];
 
   const services = [
-    { name: "E-Commerce Solutions", href: "/ecommerce", icon: ShoppingBag },
-    { name: "Digital Marketing Training", href: "/training", icon: GraduationCap },
-    { name: "Consultancy Services", href: "/consultancy" }
-  ];
-
-  const socialLinks = [
-    { name: "Facebook", icon: Facebook, href: "#", color: "hover:text-blue-400" },
-    { name: "Twitter", icon: Twitter, href: "#", color: "hover:text-sky-400" },
-    { name: "Instagram", icon: Instagram, href: "#", color: "hover:text-pink-400" },
-    { name: "LinkedIn", icon: Linkedin, href: "#", color: "hover:text-blue-500" },
-    { name: "YouTube", icon: Youtube, href: "#", color: "hover:text-red-500" }
+    { name: "E-Commerce Solutions", href: "/services/ecommerce", icon: ShoppingBag },
+    { name: "Digital Marketing Training", href: "/services/training", icon: GraduationCap }
   ];
 
   return (
@@ -46,21 +44,7 @@ const Footer = () => {
                 Empowering e-commerce success and digital marketing excellence. 
                 Your trusted partner in the digital journey.
               </p>
-              <div className="flex gap-3 pt-4">
-                {socialLinks.map((social) => {
-                  const Icon = social.icon;
-                  return (
-                    <a
-                      key={social.name}
-                      href={social.href}
-                      className={`w-10 h-10 bg-gray-800 rounded-lg flex items-center justify-center transition-all duration-300 hover:bg-gray-700 ${social.color}`}
-                      aria-label={social.name}
-                    >
-                      <Icon className="w-5 h-5" />
-                    </a>
-                  );
-                })}
-              </div>
+              {/* Social icons removed */}
             </div>
 
             <div>
