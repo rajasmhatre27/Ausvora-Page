@@ -109,7 +109,7 @@ const Footer = () => {
                   <MapPin className="w-5 h-5 text-orange-400 flex-shrink-0 mt-0.5" />
                   <div>
                     <p className="text-gray-300">Location</p>
-                    <p className="text-white">India</p>
+                    <p className="text-white">USA</p>
                   </div>
                 </li>
               </ul>
