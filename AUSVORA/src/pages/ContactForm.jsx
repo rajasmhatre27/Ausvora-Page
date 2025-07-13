@@ -1,4 +1,4 @@
-// ContactForm.jsx
+// src/components/ContactForm.jsx
 import React from "react";
 import { Send } from "lucide-react";
 
@@ -11,7 +11,6 @@ const ContactForm = () => {
           method="POST"
           className="space-y-6"
         >
-          {/* Optional hidden fields */}
           <input type="hidden" name="_subject" value="New message from Ausvora Website" />
           <input type="hidden" name="_captcha" value="false" />
           <input

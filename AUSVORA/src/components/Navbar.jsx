@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Menu, X, ShoppingBag, GraduationCap, ChevronDown, Home, Info, Phone, ArrowRight } from "lucide-react";
+import ContactForm from "../pages/ContactForm";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -239,7 +240,7 @@ const Navbar = () => {
             </button>
             <div className="text-center">
               <h2 className="text-2xl font-bold text-gray-800 mb-4">Get Started</h2>
-              <p className="text-gray-600">Contact form component would go here</p>
+              <p className="text-gray-600"><ContactForm/></p>
             </div>
           </div>
         </div>

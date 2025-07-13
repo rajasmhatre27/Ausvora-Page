@@ -1,4 +1,4 @@
-// Contact.jsx
+// src/pages/Contact.jsx
 import React, { useEffect } from "react";
 import { Phone, Mail, ArrowDown } from "lucide-react";
 import ContactForm from "./ContactForm";
@@ -108,7 +108,7 @@ const Contact = () => {
         </div>
       </section>
 
-      {/* Inline Form Section */}
+      {/* Contact Form */}
       <section className="py-32 bg-white">
         <div className="max-w-6xl mx-auto px-6 md:px-8">
           <div className="grid lg:grid-cols-2 gap-16 items-start">
@@ -121,7 +121,7 @@ const Contact = () => {
               </p>
             </div>
 
-            <ContactForm />
+            <ContactForm/>{/* ✅ Rendered correctly now */}
           </div>
         </div>
       </section>
