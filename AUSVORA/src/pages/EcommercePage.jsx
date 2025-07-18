@@ -6,6 +6,7 @@ import {
   BarChart3,
   Headphones,
   Search,
+  Globe,
 } from 'lucide-react';
 
 const EcommercePage = () => {
@@ -34,6 +35,11 @@ const EcommercePage = () => {
       icon: <Headphones className="w-5 h-5" />,
       title: "Customer Support Assistance",
       description: "Professional support team handling inquiries and reviews"
+    },
+    {
+      icon: <Globe className="w-5 h-5" />,
+      title: "Selling on Multiple Platforms",
+      description: "We help you expand reach by listing your products on Amazon, eBay, Etsy, and more."
     }
   ];
 
